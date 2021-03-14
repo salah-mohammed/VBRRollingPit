@@ -17,7 +17,7 @@ extension CGFloat {
     }
 }
 
-@IBDesignable class RollingPitTabBar: UITabBar {
+@IBDesignable public class RollingPitTabBar: UITabBar {
     
     @IBInspectable public var barBackColor : UIColor = UIColor.white
     @IBInspectable public var barHeight : CGFloat = 65
@@ -304,7 +304,7 @@ extension CGFloat {
         }
     }
     
-    override var selectedItem: UITabBarItem? {
+    public override var selectedItem: UITabBarItem? {
         get{
             return super.selectedItem
         }
@@ -317,7 +317,7 @@ extension CGFloat {
         }
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         background.fillColor = self.barBackColor.cgColor
         circle.fillColor = self.circleBackColor.cgColor
@@ -327,7 +327,7 @@ extension CGFloat {
         
     }
     
-    override func prepareForInterfaceBuilder() {
+    public override func prepareForInterfaceBuilder() {
         self.isTranslucent = true
         self.backgroundColor = UIColor.clear
         self.backgroundImage = UIImage()
